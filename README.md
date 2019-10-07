@@ -15,3 +15,6 @@ To create basic project structure:
 
 `npx create-react-app`
 
+Installin *react-icons*:
+
+`npm install react-icons --save`
