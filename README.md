@@ -15,6 +15,18 @@ To create basic project structure:
 
 `npx create-react-app`
 
-Installin *react-icons*:
+Installing *react-icons*:
 
 `npm install react-icons --save`
+
+Installing *firebase*:
+
+`npm install --save firebase`
+
+Installing *node-sass*:
+
+`npm install --save node-sass`
+
+Installing *MomentJS*
+
+`npm install moment`
