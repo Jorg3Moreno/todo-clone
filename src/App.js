@@ -2,12 +2,17 @@ import React from "react";
 
 import Header from "./components/layout/Header";
 import Content from "./components/layout/Content";
+import { ProjectsProviders, SelectedProjectProvider } from "./context";
 
 const App = () => (
-  <div className="App">
-    <Header />
-    <Content />
-  </div>
+  <SelectedProjectProvider>
+    <ProjectsProviders>
+      <div className="App">
+        <Header />
+        <Content />
+      </div>
+    </ProjectsProviders>
+  </SelectedProjectProvider>
 );
 
 export default App;
