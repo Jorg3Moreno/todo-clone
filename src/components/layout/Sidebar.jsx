@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FaChevronDown,
   FaInbox,
@@ -6,37 +6,47 @@ import {
   FaRegCalendar
 } from "react-icons/fa";
 
-const Sidebar = () => (
-  <div className="sidebar" data-testid="sidebar">
-    <ul className="sidebar__list">
-      <li className="inbox" data-testid="inbox">
+import ProjectList from "../ProjectList";
+import AddProject from "../AddProject";
+import { useSelectedProjectValue } from "../../context";
+
+const Sidebar = () => {
+  const { selectedProject } = useSelectedProjectValue;
+  const [active, setActive] = useState("inbox");
+  const [showProjects, setShowProjects] = useState(true);
+
+  return (
+    <div className="sidebar" data-testid="sidebar">
+      <ul className="sidebar__list">
+        <li className="inbox" data-testid="inbox">
+          <span>
+            <FaInbox />
+          </span>
+          <span>Inbox</span>
+        </li>
+        <li className="today" data-testid="today">
+          <span>
+            <FaRegCalendar />
+          </span>
+          <span>Today</span>
+        </li>
+        <li className="next_7" data-testid="next_7">
+          <span>
+            <FaRegCalendarAlt />
+          </span>
+          <span>Next 7 days</span>
+        </li>
+      </ul>
+      <div className="sidebar__middle">
         <span>
-          <FaInbox />
+          <FaChevronDown />
         </span>
-        <span>Inbox</span>
-      </li>
-      <li className="today" data-testid="today">
-        <span>
-          <FaRegCalendar />
-        </span>
-        <span>Today</span>
-      </li>
-      <li className="next_7" data-testid="next_7">
-        <span>
-          <FaRegCalendarAlt />
-        </span>
-        <span>Next 7 days</span>
-      </li>
-    </ul>
-    <div className="sidebar__middle">
-      <span>
-        <FaChevronDown />
-      </span>
-      <h2>Projects</h2>
+        <h2>Projects</h2>
+      </div>
+      <ul className="sidebar__projects">{showProjects && <ProjectList />}</ul>
+      <AddProject />
     </div>
-    <ul className="sidebar__projects">Projects will be here!</ul>
-    Add Project Component Here!
-  </div>
-);
+  );
+};
 
 export default Sidebar;
