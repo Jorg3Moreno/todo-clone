@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-import { useSelectedProjectValue, useProjectsValue } from "../context";
 import Project from "./Project";
+import { useSelectedProjectValue, useProjectsValue } from "../context";
 
 const ProjectList = ({ activeValue = true }) => {
   const [active, setActive] = useState(activeValue);
