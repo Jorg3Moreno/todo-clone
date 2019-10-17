@@ -20,10 +20,6 @@ const ProjectList = ({ activeValue = true }) => {
             ? "active sidebar__project"
             : "sidebar__project"
         }
-        onKeyDown={() => {
-          setActive(project.projectId);
-          setSelectedProject(project.projectId);
-        }}
         onClick={() => {
           setActive(project.projectId);
           setSelectedProject(project.projectId);
