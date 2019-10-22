@@ -12,7 +12,7 @@ const ProjectList = ({ activeValue = true }) => {
     projects &&
     projects.map(project => (
       <li
-        key={project.id}
+        key={project.projectId}
         data-doc-id={project.docId}
         data-testid="project-action"
         className={
